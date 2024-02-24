@@ -28,3 +28,27 @@ class Graph {
         delete this.adjacencyList[vertex];
     }
 }
+
+const graphx = {
+    A: ['C'],
+    B: ['D'],
+    C: ['A'],
+    D: ['B', 'C']
+}
+
+
+const graph = new Graph();
+
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("B", "D");
+graph.addEdge("C", "D");
+console.log(graph.adjacencyList);
+
+graph.removeVertex("D");
+
+console.log(graph.adjacencyList);

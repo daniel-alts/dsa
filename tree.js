@@ -50,6 +50,7 @@ class Tree {
             node.right = this.removeNode(node.right, key);
             return node;
         } else {
+            // node has been found
             if (node.left === null && node.right === null) {
                 node = null;
                 return node;
@@ -104,3 +105,21 @@ class Tree {
         }
     }    
 }
+
+
+const tree = new Tree();
+
+tree.add(31);
+tree.add(20);
+tree.add(50);
+tree.add(15);
+tree.add(28);
+tree.add(40);
+tree.add(60);
+tree.add(10);
+tree.add(18);
+tree.add(25);
+
+// console.log('Inorder:', tree.inorder(tree.getRootNode(), (value) => console.log(value)));
+// console.log('Preorder:', tree.preorder(tree.getRootNode(), (value) => console.log(value)));
+console.log('Postorder:', tree.postorder(tree.getRootNode(), (value) => console.log(value)));
